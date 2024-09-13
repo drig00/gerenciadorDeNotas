@@ -44,13 +44,7 @@ public class NoteController {
 	public void deleteNote(@PathVariable long id) {
 		noteservice.deleteNote(id);
 	}
-	/*
-	@PutMapping("/{id}")
-    public ResponseEntity<Note> updateItem(@PathVariable Long id, @RequestBody Note updatedNote) {
-            Note note = noteservice.UpdatedNote(id, updatedNote);
-            return new ResponseEntity<>(note, HttpStatus.OK); // Retorna o item atualizado com status 200 OK
-    }
-	*/
+	
 	@GetMapping("/nome/{name}")
 	public ResponseEntity<Note> getNoteByName(@PathVariable String name){
 		Optional<Note> note = noteservice.getNoteByName(name);

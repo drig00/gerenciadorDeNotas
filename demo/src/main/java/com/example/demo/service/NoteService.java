@@ -30,14 +30,6 @@ public class NoteService {
 		noterepository.deleteById(id);
 	}
 	
-	public Note UpdatedNote(Long id, Note updatedNote) {
-		Optional<Note> existingNote = noterepository.findById(id);
-		Note note = existingNote.get();
-		note.setId(updatedNote.getId());
-		note.setContent(updatedNote.getContent());
-		return noterepository.save(note);
-	}
-	
 	public Optional<Note> getNoteByName(String name){
 		return noterepository.findByName(name);
 	}
